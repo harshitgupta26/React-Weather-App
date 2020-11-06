@@ -1,0 +1,79 @@
+body {
+  /* background-image: url('https://previews.123rf.com/images/nomad_s0ul/nomad_s0ul1502/nomad_s0ul150200008/36635796-weather-signs-seamless-pattern-background.jpg'); */
+  background: #41295a;  
+background: -webkit-linear-gradient(to right, #2F0743, #41295a);  
+background: linear-gradient(to right, #2F0743, #41295a);
+/* background-image: url('https://forums-images.oneplus.net/attachments/873/873153-0c7111a2059c11bdcf1bf63b6ce0d32d.jpg'); */
+/* background-image: url('https://i.pinimg.com/originals/4d/4e/bc/4d4ebc2106570c76a363cecf3baade51.jpg'); */
+
+}
+.header {
+  background: rgba(255, 255, 255, 0.658);
+  box-shadow: 0 0 10px 1px gray;
+}
+
+.card-container {
+  height: 200px;
+}
+.weather-card {
+  border: none; 
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.623);
+  perspective: 1000px;
+}
+.weather-card .card-body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+.weather-card:hover .card-body {
+  transform: rotateY(180deg);
+}
+.weather-card .front, .weather-card .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.weather-card .back {
+  transform: rotateY(180deg);
+}
+/* .weather-card:hover {
+  transform: scale(1.03);
+}
+.front {
+  display: block;
+}
+.back {
+  display: none;
+}
+.weather-card:hover .front {
+  display: none;
+}
+.weather-card:hover .back {
+  display: block;
+} */
+.custom-inp {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid white;
+  color: white;
+  padding: 10px;
+  margin-left: 10px;
+}
+.custom-inp:focus {
+  border-bottom: 2px solid #dc3545;
+}
+.custom-inp option {
+  color: black;
+}
+.chart-holder {
+  border-radius: 10px;
+  /* background-color: #b9adc1; */
+  background-color: rgba(255, 255, 255, 0.623);
+}
