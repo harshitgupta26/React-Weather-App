@@ -12,7 +12,7 @@ background: linear-gradient(to right, #2F0743, #41295a);
   box-shadow: 0 0 10px 1px gray;
 }
 
-.card-container {
+.card-container { 
   height: 200px;
 }
 .weather-card {
