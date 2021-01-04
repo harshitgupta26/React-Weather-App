@@ -1,3 +1,7 @@
+# React Weather App
+
+This is a small web application which is made using React. It shows the weather conditions of upto 5 days of the city entered by the user. It uses OpenWeatherMap API to feth the weather details and Charts.js to show the graph.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
