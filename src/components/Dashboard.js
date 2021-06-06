@@ -44,13 +44,24 @@ export default class Dashboard extends Component {
         const date = []
         const min = []
         const max = []
-        data.list.map((item, index)=>{
-            if(index%8 === 0) {
-                date.push(item.dt_txt.split(' ')[0])
-                min.push((item.main.temp_min-275).toFixed(1))
-                max.push((item.main.temp_max-275).toFixed(1))
+        let min_temp = data.list[0].main.temp_min
+        let max_temp = data.list[0].main.temp_max
+        data.list.forEach((item, index)=>{
+            if(item.main.temp_min < min_temp) {
+                min_temp = item.main.temp_min
             }
-        })
+            if(item.main.temp_max > max_temp) {
+                max_temp = item.main.temp_max
+            }
+
+            if((index+1)%8 === 0) {
+                date.push(item.dt_txt.split(' ')[0])
+                min.push((min_temp-273).toFixed(1))
+                max.push((max_temp-273).toFixed(1))
+                min_temp = item.main.temp_min
+                max_temp = item.main.temp_max
+            }
+        });
         this.setState({
             data: data,
             dates: date,
@@ -104,7 +115,7 @@ export default class Dashboard extends Component {
                         <div className="row justify-content-center">
                             {data.list.map((item, index) => 
                                 index%8 == 0 ? <div className="col-md-4 col-xl-2 mt-4 card-container" key={index}>
-                                    <WeatherCard weatherData={item} index={index}></WeatherCard>
+                                    <WeatherCard weatherData={item} minTemp={minTemp[index/8]} maxTemp={maxTemp[index/8]} index={index}></WeatherCard>
                                 </div> : ''
                             )}  
                         </div>
